@@ -1,2 +1,2 @@
 # doctrine-example
-doctrine examples
+demo doctrine examples
