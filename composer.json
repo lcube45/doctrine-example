@@ -1,0 +1,12 @@
+{
+  "name": "demo doctrine",
+  "type": "project",
+  "description": "doctrine examples",
+  "require" : {
+    "doctrine/orm": "2.5.4",
+    "symfony/yaml": "2.*"
+  },
+  "autoload": {
+    "psr-0": {"": "src/"}
+  }
+}
