@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lcube
- * Date: 26/08/16
- * Time: 22:32
- */
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
