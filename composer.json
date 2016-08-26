@@ -4,7 +4,8 @@
   "description": "doctrine examples",
   "require" : {
     "doctrine/orm": "2.5.4",
-    "symfony/yaml": "2.*"
+    "symfony/yaml": "2.*",
+    "nelmio/alice": "^2.1"
   },
   "autoload": {
     "psr-0": {"": "src/"}

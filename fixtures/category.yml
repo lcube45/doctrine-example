@@ -1,0 +1,3 @@
+Category:
+    category{1..10}:
+        label: '<sentence($nbWords = 3, $variableNbWords = true)>'
