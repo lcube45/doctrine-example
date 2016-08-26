@@ -2,9 +2,9 @@
 
 /**
  * @Entity
- * @Table(name="project")
- */
-class Project
+ * @Table(name="category")
+ **/
+class Category
 {
   /**
    * @var int
@@ -18,19 +18,8 @@ class Project
   /**
    * @var string
    *
-   * @Column(name="code", type="string", length=10, unique=true)
-   */
-  private $code;
-
-  /**
-   * @var string
-   *
    * @Column(name="label", type="string", length=255)
    */
   private $label;
 
-  /**
-   * @ManyToOne(targetEntity="Category")
-   */
-  protected $category;
 }
