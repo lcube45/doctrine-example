@@ -17,7 +17,7 @@ $entityManager = EntityManager::create($connection, $config);
 
 // Load objects from a yaml file
 $loader = new \Nelmio\Alice\Fixtures\Loader();
-$objects = $loader->load(__DIR__.'/fixtures/category.yml');
+$objects = $loader->load(__DIR__.'/fixtures/fixtures.yml');
 
 // Optionally persist them into the doctrine object manager
 // you can also do that yourself or persist them in another way
