@@ -5,7 +5,8 @@
   "require" : {
     "doctrine/orm": "2.5.4",
     "symfony/yaml": "2.*",
-    "nelmio/alice": "^2.1"
+    "nelmio/alice": "^2.1",
+    "gedmo/doctrine-extensions": "^2.4"
   },
   "autoload": {
     "psr-0": {"": "src/"}

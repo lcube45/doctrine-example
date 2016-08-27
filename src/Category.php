@@ -1,5 +1,7 @@
 <?php
 
+use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
  * @Entity
  * @Table(name="category")
@@ -21,6 +23,22 @@ class Category
    * @Column(name="label", type="string", length=255)
    */
   private $label;
+
+  /**
+   * @var \DateTime $created
+   *
+   * @Gedmo\Timestampable(on="create")
+   * @Column(type="datetime")
+   */
+  private $created;
+
+  /**
+   * @var \DateTime $updated
+   *
+   * @Gedmo\Timestampable(on="update")
+   * @Column(type="datetime")
+   */
+  private $updated;
 
     /**
      * Get id

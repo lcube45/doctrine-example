@@ -1,9 +1,13 @@
 Category:
   category{1..10}:
     label: '<sentence($nbWords = 1, $variableNbWords = true)>'
+    created: <dateTimeThisYear($max = 'now')>
+    updated: <dateTimeThisYear($max = 'now')>
 
 Project:
   project{1..100}:
     code (unique): '<ean8()>'
     label: '<sentence($nbWords = 3, $variableNbWords = true)>'
     category: '@category*'
+    created: <dateTimeThisYear($max = 'now')>
+    updated: <dateTimeThisYear($max = 'now')>
