@@ -1,3 +1,9 @@
 Category:
-    category{1..10}:
-        label: '<sentence($nbWords = 3, $variableNbWords = true)>'
+  category{1..10}:
+    label: '<sentence($nbWords = 1, $variableNbWords = true)>'
+
+Project:
+  project{1..100}:
+    code (unique): '<ean8()>'
+    label: '<sentence($nbWords = 3, $variableNbWords = true)>'
+    category: '@category*'
