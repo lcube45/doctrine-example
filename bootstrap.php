@@ -16,9 +16,7 @@ $connection = array(
 $entityManager = EntityManager::create($connection, $config);
 
 // Load objects from a yaml file
-/*
 $loader = new \Nelmio\Alice\Fixtures\Loader();
 $objects = $loader->load(__DIR__.'/fixtures/fixtures.yml');
 $persister = new \Nelmio\Alice\Persister\Doctrine($entityManager);
 $persister->persist($objects);
-*/

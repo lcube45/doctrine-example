@@ -35,6 +35,11 @@ class Project
   protected $category;
 
   /**
+   * @ManyToOne(targetEntity="Team", inversedBy="projects")
+   */
+  protected $team;
+
+  /**
    * @var \DateTime $created
    *
    * @Gedmo\Timestampable(on="create")
@@ -130,5 +135,77 @@ class Project
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     *
+     * @return Project
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     *
+     * @return Project
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set team
+     *
+     * @param \Team $team
+     *
+     * @return Project
+     */
+    public function setTeam(\Team $team = null)
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+    /**
+     * Get team
+     *
+     * @return \Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
     }
 }

@@ -25,52 +25,112 @@ class Category
   private $label;
 
   /**
-   * @var \DateTime $created
-   *
-   * @Gedmo\Timestampable(on="create")
-   * @Column(type="datetime")
+   * @OneToMany(targetEntity="Category", mappedBy="parent")
    */
-  private $created;
+  private $children;
 
   /**
-   * @var \DateTime $updated
-   *
-   * @Gedmo\Timestampable(on="update")
-   * @Column(type="datetime")
+   * @ManyToOne(targetEntity="Category", inversedBy="children")
+   * @JoinColumn(name="parent_id", referencedColumnName="id")
    */
-  private $updated;
+  private $parent;
 
+  /**
+   * Get id
+   *
+   * @return integer
+   */
+  public function getId()
+  {
+      return $this->id;
+  }
+
+  /**
+   * Set label
+   *
+   * @param string $label
+   *
+   * @return Category
+   */
+  public function setLabel($label)
+  {
+      $this->label = $label;
+
+      return $this;
+  }
+
+  /**
+   * Get label
+   *
+   * @return string
+   */
+  public function getLabel()
+  {
+      return $this->label;
+  }
     /**
-     * Get id
-     *
-     * @return integer
+     * Constructor
      */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Set label
+     * Add child
      *
-     * @param string $label
+     * @param \Category $child
      *
      * @return Category
      */
-    public function setLabel($label)
+    public function addChild(\Category $child)
     {
-        $this->label = $label;
+        $this->children[] = $child;
 
         return $this;
     }
 
     /**
-     * Get label
+     * Remove child
      *
-     * @return string
+     * @param \Category $child
      */
-    public function getLabel()
+    public function removeChild(\Category $child)
     {
-        return $this->label;
+        $this->children->removeElement($child);
+    }
+
+    /**
+     * Get children
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param \Category $parent
+     *
+     * @return Category
+     */
+    public function setParent(\Category $parent = null)
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return \Category
+     */
+    public function getParent()
+    {
+        return $this->parent;
     }
 }

@@ -1,13 +1,23 @@
+User:
+  user{1..30}:
+    firstname: '<firstname()>'
+    lastname: '<lastname()>'
+
+Team:
+  team{1..10}:
+    label: '<company()>'
+    users: '<numberBetween(2, 5)>x @user*'
+
 Category:
   category{1..10}:
     label: '<sentence($nbWords = 1, $variableNbWords = true)>'
-    created: <dateTimeThisYear($max = 'now')>
-    updated: <dateTimeThisYear($max = 'now')>
+    parent: '@category*'
 
 Project:
   project{1..100}:
     code (unique): '<ean8()>'
-    label: '<sentence($nbWords = 3, $variableNbWords = true)>'
+    label: '<domainName()>'
     category: '@category*'
+    team: '@team*'
     created: <dateTimeThisYear($max = 'now')>
     updated: <dateTimeThisYear($max = 'now')>
