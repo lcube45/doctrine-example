@@ -1,8 +1,8 @@
 # Doctrine starter kit
 
-Associations examples based on annotations
-Behavior implementation example
-Fixtures with faker example
+- Associations examples based on annotations
+- Behavior implementation example
+- Fixtures with faker example
 
 ## Doctrine commands
 - orm:schema-tool:create
